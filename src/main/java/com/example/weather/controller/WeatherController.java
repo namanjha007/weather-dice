@@ -21,7 +21,7 @@ public class WeatherController {
         return ResponseEntity.ok(response);
     }
 
-    @GetMapping(value="/hourlyForecast", produces = "application/json")
+    @GetMapping(value="/hourlyForecast/{cityName}", produces = "application/json")
     public ResponseEntity<String> getHourlyForecast(@PathVariable String cityName) throws Exception {
         String response = weatherService.getHourlyForecast(cityName);
         return ResponseEntity.ok(response);
